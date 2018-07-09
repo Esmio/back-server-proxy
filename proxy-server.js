@@ -15,7 +15,6 @@ app.use((req, res, next) => {
     if(!req.timedout) next();
 })
 
-app.use('/', express.static('static'));
 
 // app.use(proxy('/api/test', { target: HOST }));
 
@@ -24,6 +23,7 @@ app.use('/', express.static('static'));
 // app.use(proxy('/static', { target: HOST }));
 // app.use(proxy('/upload', { target: HOST }));
 
+app.use('/', express.static('static'));
 app.use('/music', express.static('static'));
 app.use('/login', express.static('static'));
 app.use('/static',express.static('static'));
