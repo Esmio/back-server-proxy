@@ -3,7 +3,7 @@ const timeout = require('connect-timeout');
 const proxy = require('http-proxy-middleware');
 const app = express();
 
-const { HOST = 'http://127.0.0.1:3000', PORT = '3300' } = process.env;
+const { HOST = 'http://127.0.0.1:3000', PORT = '4080' } = process.env;
 
 const TIME_OUT = 30 * 1e3;
 
@@ -17,7 +17,7 @@ app.use((req, res, next) => {
 
 app.use('/', express.static('static'));
 
-app.use(proxy('/api/test', { target: HOST }));
+// app.use(proxy('/api/test', { target: HOST }));
 
 // app.use(proxy('/music', { target: HOST }));
 // app.use(proxy('/login', { target: HOST }));
