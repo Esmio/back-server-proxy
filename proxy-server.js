@@ -30,6 +30,8 @@ app.use('/static',express.static('static'));
 app.use('/upload',express.static('static'));
 app.use('/agreement',express.static('static'));
 
+app.use('/download', express.static('static/download'));
+
 
 app.listen(app.get('port'), () => {
     console.log(`server running @${app.get('port')}`);
