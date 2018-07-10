@@ -28,11 +28,13 @@
             // console.log('是否是Android：'+isAndroid);
             // console.log('是否是iOS：'+isiOS);
             var url = '';
-            if(isiOS) url = 'www.apple.com';
+            if(isiOS) url = 'https://itunes.apple.com/cn/app/id1276206042?mt=8';
             if(isAndroid) url = 'www.android.com';
             var button = document.getElementById('button');
             button.addEventListener('click', function() {
-                button.innerText = url;
+                // button.innerText = url;
+                location.href=url
+                console.log('url',url)
                 TDAPP.onEvent('点击下载按钮');
             })
         </script>
