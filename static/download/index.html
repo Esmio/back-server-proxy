@@ -32,7 +32,8 @@
             if(isAndroid) url = 'www.android.com';
             var button = document.getElementById('button');
             button.addEventListener('click', function() {
-                alert(url);
+                button.innerText = url;
+                TDAPP.onEvent('点击下载按钮');
             })
         </script>
     </body>
