@@ -31,7 +31,11 @@ app.use('/upload',express.static('static'));
 app.use('/agreement',express.static('static'));
 
 app.use('/download', express.static('static/download'));
+// app.use(express.static(__dirname + 'static'))
 
+app.get('/app',function(req,res,next){
+    res.download(__dirname + '/static/download/assets/3135328_Snapback.mp3','snapback.mp3');
+});
 
 app.listen(app.get('port'), () => {
     console.log(`server running @${app.get('port')}`);

@@ -27,14 +27,12 @@
             var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
             // console.log('是否是Android：'+isAndroid);
             // console.log('是否是iOS：'+isiOS);
-            var url = '';
-            if(isiOS) url = 'https://itunes.apple.com/cn/app/id1276206042?mt=8';
-            if(isAndroid) url = 'www.android.com';
             var button = document.getElementById('button');
+            let url = '';
+            if(isiOS) url = 'https://itunes.apple.com/cn/app/id1276206042?mt=8';
+            if(isAndroid) url = '/app';
             button.addEventListener('click', function() {
-                // button.innerText = url;
-                location.href=url
-                console.log('url',url)
+                location.href = url;
                 TDAPP.onEvent('点击下载按钮');
             })
         </script>
