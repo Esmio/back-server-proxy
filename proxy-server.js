@@ -34,7 +34,7 @@ app.use('/download', express.static('static/download'));
 // app.use(express.static(__dirname + 'static'))
 
 app.get('/app',function(req,res,next){
-    res.download(__dirname + '/static/download/assets/唔哩星球-v2.7.1-gionee-release.apk','唔哩星球.apk');
+    res.download(__dirname + '/static/download/assets/唔哩星球-v2.7.1-gionee-release.apk','wulixingqiu.apk');
 });
 
 app.listen(app.get('port'), () => {
