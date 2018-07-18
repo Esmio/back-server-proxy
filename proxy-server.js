@@ -33,6 +33,9 @@ app.use('/agreement',express.static('static'));
 app.use('/download', express.static('static/download'));
 // app.use(express.static(__dirname + 'static'))
 
+app.use('/pay', express.static('static/wechat'));
+app.use('/members', express.static('static/wechat'));
+
 app.get('/app',function(req,res,next){
     res.download(__dirname + '/static/download/assets/唔哩星球-v2.7.1-gionee-release.apk','WuliStar.apk');
 });
