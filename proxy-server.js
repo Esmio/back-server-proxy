@@ -30,7 +30,9 @@ app.use('/static',express.static('static'));
 app.use('/upload',express.static('static'));
 app.use('/agreement',express.static('static'));
 
-app.use('/download', express.static('static/download'));
+app.use(express.static('download'))
+app.use('/download', express.static('download'));
+
 // app.use(express.static(__dirname + 'static'))
 app.use(express.static('wechat'));
 app.use('/pay', express.static('wechat'));
