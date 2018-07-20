@@ -49,8 +49,8 @@ app.use('/pay', express.static('wechat'));
 app.use('/members', express.static('wechat'));
 app.get('/verify', (req, res, next) => {
     // res.send('fsdfsfsfs')
-    console.log('req.query');
-    return req.query.echostr
+    console.log('req.query', req.query);
+    res.send(req.query.echostr)
 })
 
 app.use(express.static('download'))
