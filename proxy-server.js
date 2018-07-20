@@ -14,7 +14,7 @@ const proxy = require('http-proxy-middleware');
 //     paymentCertificatePfx: fs.readFileSync(path.join(process.cwd(), 'cert/apiclient_cert.p12')),
 //     paymentNotifyUrl: `http://your.domain.com/api/wechat/payment/`,
 // }
-const wx = new Wechat(wechatConfig);
+// const wx = new Wechat(wechatConfig);
 const app = express();
 
 const { HOST = 'http://127.0.0.1:3000', PORT = '4080' } = process.env;
