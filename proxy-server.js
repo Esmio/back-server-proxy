@@ -47,7 +47,7 @@ app.use('/agreement',express.static('static'));
 app.use(express.static('wechat'));
 app.use('/pay', express.static('wechat'));
 app.use('/members', express.static('wechat'));
-router.get('/verify', (req, res, next) => {
+app.get('/verify', (req, res, next) => {
     // res.send('fsdfsfsfs')
     console.log('req.query');
     return req.query.echostr
