@@ -1,6 +1,8 @@
 const express = require('express');
 const timeout = require('connect-timeout');
 const proxy = require('http-proxy-middleware');
+const rp = require('request-promise');
+const {appId, secret} = require('./config');
 // const Wechat = require('wechat-jssdk');
 // const wechatConfig = {
 //     wechatRedirectUrl: '',
@@ -51,6 +53,18 @@ app.get('/verify', (req, res, next) => {
     // res.send('fsdfsfsfs')
     console.log('req.query', req.query);
     res.send(req.query.echostr)
+})
+app.get('/api/auth', (req, res, next) => {
+    const {code} = req.query;
+    console.log(req.query)
+    rp(`https://api.weixin.qq.com/sns/oauth2/access_token?appid=${appId}&secret=${secret}&code=${code}&grant_type=authorization_code`)
+        .then(response => {
+            console.log('res', response);
+            res.json(JSON.parse(response));
+        })
+        .catch(e => {
+            console.log('e', e);
+        })
 })
 
 app.use(express.static('download'))
