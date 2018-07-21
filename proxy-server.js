@@ -60,6 +60,7 @@ app.get('/api/auth', (req, res, next) => {
     rp(`https://api.weixin.qq.com/sns/oauth2/access_token?appid=${appId}&secret=${secret}&code=${code}&grant_type=authorization_code`)
         .then(response => {
             console.log('res', response);
+            res.header('Access-Control-Allow-Origin', ['*']);
             res.json(JSON.parse(response));
         })
         .catch(e => {
